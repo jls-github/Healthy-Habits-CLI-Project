@@ -19,12 +19,13 @@ Meal.destroy_all
 RecipeComponent.destroy_all
 Ingredient.destroy_all
 
-10.times do
+2.times do
     rand_meal = JSON.parse(RestClient.get('https://www.themealdb.com/api/json/v1/1/random.php'))["meals"][0]
     i = 1
     Recipe.find_or_create_by({
         name: rand_meal["strMeal"],
-        instructions: rand_meal["strInstructions"]
+        instructions: rand_meal["strInstructions"],
+        category: rand_meal["strCategory"]
     })
     until rand_meal["strIngredient#{i}"] == ""
         Ingredient.find_or_create_by({
@@ -38,3 +39,13 @@ Ingredient.destroy_all
         i += 1
     end
 end
+
+100.times do
+    Meal.create({
+        user_id: User.all.sample.id,
+        recipe_id: Recipe.all.sample.id,
+        date: rand(Date.civil(2020, 3, 1)..Date.civil(2020, 3, 24)),
+        meal_time: ["breakfast", "lunch", "dinner"].sample
+    })
+end
+
