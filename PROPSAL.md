@@ -16,6 +16,7 @@ User Stories
 * I want to know what to make for meals
 * I want to be able to set what to have for meals each day - the app should remember this
 * I want to know what exercises to do
+* I want to be able to see how to do those exercises
 * I want to see all of this as a checklist
 
 
@@ -51,7 +52,7 @@ MVP
         [ ] Migrate
     [ ] Recipe Component Table (join between ingredients and recipes)
         columns:  ingredient_id, recipe_id, ingredient_amount
-        [ ] Create Migration
+        [x] Create Migration
         [ ] Migrate
     [ ] Meal should have a find_or_create_by method
     [ ] Meal is linked with individual user by meals
@@ -59,13 +60,35 @@ MVP
     [ ] API call to seed database
 [ ] Exercise
     [ ] Exercises table
+        columns: name, instruction
+        [x] Create Migration
+        [ ] Migrate
+    [ ] Exercise_track_day table
+        columns: day, exercise_id, exercise_track_id, reps, sets
         [ ] Create Migration
         [ ] Migrate
-    [ ] Exercises track table (many to many - users have one track, many exercises through that track)
-        [ ] Create Migration
+    [ ] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
+        columns: name, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+        [x] Create Migration
+        [ ] Migrate
+    [ ] Exercise Committment Table
+        columns: user_id, exercise_track_id
+        [x] Create Migration
         [ ] Migrate
     [ ] Ability to see popular exercices
     [ ] API call to seed database
+[ ] Main Menu
+    [ ] Shows only services opted into
+    [ ] Plan Your Meals
+    [ ] Plan Your Exercise
+    
+
+Stretch
+[ ] User password hashing
+[ ] Admin access
+    [ ] Can access list of users
+[ ] News displays article by article
+[ ] Displays everything as a checkbox to mark progress throughout the day
 [ ] Read
     [ ] Books table
         columns: name, genre, chapters, chapter
@@ -76,19 +99,8 @@ MVP
         [ ] Create Migration
         [ ] Migrate
     [ ] Keeps track of what chapter you are on in which book
-[ ] Main Menu
-    [ ] Shows only services opted into
-    [ ] Plan Your Meals
-    [ ] Plan Your Exercise
-    [ ] Plan Your Reading
-    
-
-Stretch
-[ ] User password hashing
-[ ] Admin access
-    [ ] Can access list of users
-[ ] News displays article by article
-[ ] Displays everything as a checkbox to mark progress throughout the day
+[ ] Exercise
+    Tailor weights, reps, sets to individual users
 [ ] Metrics
     [ ] Food
         [ ] Top 5 popular meals
