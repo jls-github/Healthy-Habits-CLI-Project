@@ -22,16 +22,17 @@ User Stories
 
 MVP
 [ ] User Log In
-    [ ] User model
+    [x] User model
         columns: username, password, role(admin or user)
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] User Menu Table
+        [x] Model
+    [x] User Menu Table
         columns user_id, news, weather, meals, exercise, reading
         [x] Create Migration
         [x] Migrate
-        [ ] Model
+        [x] Model
+    [ ] TEST: model relationships
     [ ] Seed DB
         [ ] User
         [ ] User_menus
@@ -40,26 +41,27 @@ MVP
 [x] News Display
 [x] Weather Display
 [ ] Meals(Breakfast, Lunch, Dinner)
-    [ ] Recipe model
+    [x] Recipe model
         columns: name, meal_time, prep time, recipe link 
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Meals join table
+        [x] Model
+    [x] Meals join table
         columns: user_id, recipe_id, date
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Ingredients Table
+        [x] Model
+    [x] Ingredients Table
         columns: name
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Recipe Component Table (join between ingredients and recipes)
+        [x] Model
+    [x] Recipe Component Table (join between ingredients and recipes)
         columns:  ingredient_id, recipe_id, ingredient_amount
         [x] Create Migration
         [x] Migrate
-        [ ] Model
+        [x] Model
+    [ ] TEST: model relationships
     [ ] Meal should have a find_or_create_by method
     [ ] Meal is linked with individual user by meals
     [ ] Ability to see list of popular meals
