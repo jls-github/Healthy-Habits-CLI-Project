@@ -1,3 +1,3 @@
-class UserMenus < ActiveRecord::Base
+class UserMenu < ActiveRecord::Base
     belongs_to :user
 end

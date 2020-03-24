@@ -15,7 +15,8 @@ User Stories
 * I want to be able to see the weather
 * I want to know what to make for meals
 * I want to be able to set what to have for meals each day - the app should remember this
-* I want to know what exercises to do
+* I want to be able to pick an exercise track
+* I want to know what exercises to do today
 * I want to be able to see how to do those exercises
 * I want to see all of this as a checklist
 
@@ -32,13 +33,15 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
-    [ ] TEST: model relationships
+    [x] TEST: model relationships
     [ ] Seed DB
         [ ] User
         [ ] User_menus
     [ ] User rememberance
     [ ] CLI Logic
-[x] News Display
+[ ] News Display
+    [x] Can display a news article
+    [ ] Can iterate through news articles
 [x] Weather Display
 [ ] Meals(Breakfast, Lunch, Dinner)
     [x] Recipe model
@@ -61,6 +64,7 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
+    [ ] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
     [ ] TEST: model relationships
     [ ] Meal should have a find_or_create_by method
     [ ] Meal is linked with individual user by meals
@@ -87,7 +91,6 @@ MVP
         [x] Create Migration
         [x] Migrate
         [ ] Model
-    [ ] Ability to see popular exercices
     [ ] API call to seed database
 [ ] Main Menu
     [ ] Shows only services opted into
