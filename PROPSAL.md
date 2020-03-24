@@ -28,15 +28,14 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [x] Seed
     [x] User Menu Table
         columns user_id, news, weather, meals, exercise, reading
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [x] Seed
     [x] TEST: model relationships
-    [ ] Seed DB
-        [ ] User
-        [ ] User_menus
     [ ] User rememberance
     [ ] CLI Logic
 [ ] News Display
@@ -49,47 +48,55 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [ ] Seed
     [x] Meals join table
         columns: user_id, recipe_id, date
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [ ] Seed
     [x] Ingredients Table
         columns: name
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [ ] Seed
     [x] Recipe Component Table (join between ingredients and recipes)
         columns:  ingredient_id, recipe_id, ingredient_amount
         [x] Create Migration
         [x] Migrate
         [x] Model
+        [ ] Seed
     [x] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
     [x] TEST: model relationships
     [ ] Ability to see list of popular meals
     [ ] API call to seed database
 [ ] Exercise
-    [ ] Exercises table
+    [x] Exercises table
         columns: name, instruction
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Exercise_track_day table
+        [x] Model
+        [ ] Seed
+    [x] Exercise_track_day table
         columns: day, exercise_id, exercise_track_id, reps, sets
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
+        [x] Model
+        [ ] Seed
+    [x] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
         columns: name, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] Exercise Committment Table
+        [x] Model
+        [ ] Seeed
+    [x] Exercise Committment Table
         columns: user_id, exercise_track_id
         [x] Create Migration
         [x] Migrate
-        [ ] Model
-    [ ] TEST: model relations
+        [x] Model
+        [ ] Seed
+    [x] TEST: model relations
     [ ] API call to seed database
 [ ] Main Menu
     [ ] Shows only services opted into

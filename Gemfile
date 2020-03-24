@@ -8,4 +8,6 @@ gem "require_all"
 gem 'rspec'
 gem 'rake'
 gem 'json'
+gem 'faker'
+gem 'rest-client'
 

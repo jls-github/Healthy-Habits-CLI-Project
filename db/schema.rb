@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200324181351) do
+ActiveRecord::Schema.define(version: 20200324212307) do
 
   create_table "exercise_commitments", force: :cascade do |t|
     t.integer "user_id"
@@ -53,12 +53,10 @@ ActiveRecord::Schema.define(version: 20200324181351) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string  "name"
-    t.string  "prep_time"
-    t.string  "instructions"
-    t.boolean "breakfast"
-    t.boolean "lunch"
-    t.boolean "dinner"
+    t.string "name"
+    t.string "prep_time"
+    t.string "instructions"
+    t.string "category"
   end
 
   create_table "user_menus", force: :cascade do |t|
