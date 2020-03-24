@@ -65,7 +65,7 @@ MVP
         [ ] Migrate
     [ ] Exercise_track_day table
         columns: day, exercise_id, exercise_track_id, reps, sets
-        [ ] Create Migration
+        [x] Create Migration
         [ ] Migrate
     [ ] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
         columns: name, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday

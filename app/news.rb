@@ -18,15 +18,17 @@ class News
         self.api_request["value"]
     end
 
-    def self.display_articles
+    def self.display_articles(article_number)
+        article_number = article_number.to_i
         puts "--------------------------------"
-        self.articles[1..5].map do |article|
-            puts "Title: " + article["name"]
-            puts ""
-            puts "Description: " + article["description"]
-            puts ""
-            puts "Read the full article at " + article["url"]
-            puts "--------------------------------"
-        end
+        puts "       YOUR NEWS TODAY          "
+        puts "--------------------------------"
+        article = articles[article_number]
+        puts "Title: " + article["name"]
+        puts ""
+        puts "Description: " + article["description"]
+        puts ""
+        puts "Read the full article at " + article["url"]
+        puts "--------------------------------"
     end
 end
