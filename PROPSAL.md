@@ -23,11 +23,11 @@ MVP
 [ ] User Log In
     [ ] User model
         columns: username, password, role(admin or user)
-        [ ] Create Migration
+        [x] Create Migration
         [ ] Migrate
     [ ] User Menu Table
         columns user_id, news, weather, meals, exercise, reading
-        [ ] Create Migration
+        [x] Create Migration
         [ ] Migrate
     [ ] Seed DB
         [ ] User
@@ -38,11 +38,19 @@ MVP
 [x] Weather Display
 [ ] Meals(Breakfast, Lunch, Dinner)
     [ ] Recipe model
-        columns: name, meal_time, ingredients, prep time, recipe link 
-        [ ] Create Migration
+        columns: name, meal_time, prep time, recipe link 
+        [x] Create Migration
         [ ] Migrate
     [ ] Meals join table
-        columns: user_id, recipe_id, type, date
+        columns: user_id, recipe_id, date
+        [x] Create Migration
+        [ ] Migrate
+    [ ] Ingredients Table
+        columns: name
+        [x] Create Migration
+        [ ] Migrate
+    [ ] Recipe Component Table (join between ingredients and recipes)
+        columns:  ingredient_id, recipe_id, ingredient_amount
         [ ] Create Migration
         [ ] Migrate
     [ ] Meal should have a find_or_create_by method
@@ -81,11 +89,6 @@ Stretch
     [ ] Can access list of users
 [ ] News displays article by article
 [ ] Displays everything as a checkbox to mark progress throughout the day
-[ ] Ingredients and Recipes for Meals
-    [ ] Ingredients Table
-        columns: name, 
-    [ ] Recipe Cards Table (join between ingredients and recipes)
-        columns:  ingredient_id, recipe_id, ingredient_amount
 [ ] Metrics
     [ ] Food
         [ ] Top 5 popular meals
