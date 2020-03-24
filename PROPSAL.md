@@ -64,8 +64,8 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
-    [ ] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
-    [ ] TEST: model relationships
+    [x] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
+    [x] TEST: model relationships
     [ ] Meal should have a find_or_create_by method
     [ ] Meal is linked with individual user by meals
     [ ] Ability to see list of popular meals
