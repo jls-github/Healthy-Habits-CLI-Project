@@ -25,11 +25,13 @@ MVP
     [ ] User model
         columns: username, password, role(admin or user)
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] User Menu Table
         columns user_id, news, weather, meals, exercise, reading
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Seed DB
         [ ] User
         [ ] User_menus
@@ -41,19 +43,23 @@ MVP
     [ ] Recipe model
         columns: name, meal_time, prep time, recipe link 
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Meals join table
         columns: user_id, recipe_id, date
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Ingredients Table
         columns: name
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Recipe Component Table (join between ingredients and recipes)
         columns:  ingredient_id, recipe_id, ingredient_amount
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Meal should have a find_or_create_by method
     [ ] Meal is linked with individual user by meals
     [ ] Ability to see list of popular meals
@@ -62,19 +68,23 @@ MVP
     [ ] Exercises table
         columns: name, instruction
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Exercise_track_day table
         columns: day, exercise_id, exercise_track_id, reps, sets
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
         columns: name, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Exercise Committment Table
         columns: user_id, exercise_track_id
         [x] Create Migration
-        [ ] Migrate
+        [x] Migrate
+        [ ] Model
     [ ] Ability to see popular exercices
     [ ] API call to seed database
 [ ] Main Menu
@@ -94,10 +104,12 @@ Stretch
         columns: name, genre, chapters, chapter
         [ ] Create Migration
         [ ] Migrate
+        [ ] Model
     [ ] Reading table
         columns: book_id, user_id
         [ ] Create Migration
         [ ] Migrate
+        [ ] Model
     [ ] Keeps track of what chapter you are on in which book
 [ ] Exercise
     Tailor weights, reps, sets to individual users
