@@ -34,9 +34,7 @@ until input == "5"
         check_meals
     elsif input == "4"
         check_fitness
-    else
-        input_error
-    end    
+    end
 end
 
 goodbye

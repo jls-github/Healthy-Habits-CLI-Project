@@ -20,8 +20,12 @@ def check_news
     sleep(2)
     clear_screen
     puts "Here is the news for today!"
-    i = 0
     input = "more"
+    scroll_through_news(input)
+end
+
+def scroll_through_news(input)
+    i = 0
     until input.downcase != "more"
         News.display_articles(i)
         i += 1
@@ -105,11 +109,8 @@ end
 
 def goodbye
     clear_screen
+    puts logo
+    double_space
     puts "Thanks for coming! Have a great day, and see you next time!"
     double_space
-    double_space
-end
-
-def input_error
-    
 end
