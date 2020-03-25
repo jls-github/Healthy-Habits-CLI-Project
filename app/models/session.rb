@@ -1,5 +1,5 @@
 class Session
-    attr_accessor :user, :role
+    attr_accessor :user
 
     def initialize(user)
         @user = user

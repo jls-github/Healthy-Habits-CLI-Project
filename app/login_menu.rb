@@ -25,15 +25,19 @@ def new?(input)
     elsif input.downcase == "y" || input.downcase == "yes"
         return true
     else
+        puts logo
+        double_space
         puts "Please enter 'y' or 'n'"
+        double_space
         input = gets.chomp
         new?(input)
-        return ""
     end
 end
 
 def app_description
     clear_screen
+    puts logo
+    double_space
     line
     puts "Thanks for choosing our app!"
     puts "We're here to keep you sane and healthy during quarentine." 
@@ -44,6 +48,9 @@ def app_description
 end
 
 def create_user
+    clear_screen
+    puts logo
+    double_space
     puts "First, let's set up an account for you"
     username = create_username
     password = create_password
@@ -53,12 +60,14 @@ def create_user
 end
 
 def create_username
-    puts ""
     puts "What is a good username for you?"
     double_space
     username = gets.chomp
     clear_screen
     if User.all.map{|user| user.username}.include?(username)
+        clear_screen
+        puts logo
+        double_space
         puts "Sorry, that username is already taken"
         username = create_username
         return username
@@ -69,6 +78,8 @@ def create_username
 end
 
 def create_password
+    clear_screen
+    puts logo
     double_space
     puts "Now let's choose a password"
     double_space
@@ -90,14 +101,15 @@ def create_password
         password = create_password
         return password
     end
-    puts ""
-    puts ""
+    double_space
     puts "Excellent choice!"
     password
 end
 
 def enter_username
     clear_screen
+    puts logo
+    double_space
     puts "Enter your username"
     double_space
     input = gets.chomp
@@ -122,15 +134,23 @@ end
 
 def check_password(user)
     clear_screen
+    puts logo
+    double_space
     puts "Enter your password"
     double_space
     input = gets.chomp
     unless user.password == input
         puts "Incorrect password, please try again"
-        enter_password(user)
+        password = check_password(user)
+        return password
     end
+    clear_screen
+    puts logo
     double_space
     puts "Excellent, let's get into the app!"
+    double_space
+    double_space
+    sleep(1)
 end
 
 def log_in

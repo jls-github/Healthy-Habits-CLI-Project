@@ -29,12 +29,17 @@ def check_news
         input = gets.chomp
         if i == 10
             "That's all the news for today!"
+            double_space
+            double_space
+            sleep(1)
             input = "n"
         end
     end
 end
 
 def check_weather
+    clear_screen
+    weather_graphic
     Weather.display_weather("Seattle")
     puts ""
     puts "Press 'Enter' to go back to the main menu"
@@ -55,8 +60,18 @@ def check_fitness
 end
 
 def display_todays_exercise
+    day = Date.today.strftime("%A")
+    exercise = CURRENT_SESSION.user.exercise_track.exercise_track_days.find {|track_day| track_day.day == day}.exercise
     clear_screen
-
+    puts exercise_graphic
+    line
+    puts day
+    puts exercise.name
+    puts exercise.instructions
+    line
+    double_space
+    puts "Press 'Enter' to continue"
+    gets.chomp
 end
 
 def new_to_fitness?
@@ -88,6 +103,8 @@ end
 def goodbye
     clear_screen
     puts "Thanks for coming! Have a great day, and see you next time!"
+    double_space
+    double_space
 end
 
 def input_error
