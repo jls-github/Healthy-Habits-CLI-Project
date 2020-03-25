@@ -5,7 +5,7 @@ require_relative '../config/environment'
 # if User.exists?(username: "Boyde") # test user
 #     User.find_by(username: "Boyde").destroy
 # end
-
+clear_screen
 puts logo
 puts ""
 puts ""

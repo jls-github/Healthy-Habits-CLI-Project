@@ -13,6 +13,7 @@ def display_menu
 end
 
 def check_news
+    clear_screen
     puts news_graphic
     double_space
     puts "Loading..."
@@ -20,13 +21,15 @@ def check_news
     clear_screen
     puts "Here is the news for today!"
     i = 0
-    input = "y"
-    until input.downcase != "y"
+    input = "more"
+    until input.downcase != "more"
         News.display_articles(i)
         i += 1
         puts ""
-        puts "Want to see another?(y/n)"
-        input = gets.chomp
+        puts "Enter 'more' to see another article."
+        puts "Type anything else to go back to the main menu."
+        double_space
+        input = gets.chomp.downcase
         if i == 10
             "That's all the news for today!"
             double_space
@@ -39,7 +42,7 @@ end
 
 def check_weather
     clear_screen
-    weather_graphic
+    puts weather_graphic
     Weather.display_weather("Seattle")
     puts ""
     puts "Press 'Enter' to go back to the main menu"
