@@ -97,11 +97,17 @@ MVP
     [x] TEST: model relations
     [x] API call to seed database
 [ ] Main Menu
-    [ ] Can check the news
-    [ ] Can check the weather
-    [ ] Can check exercises for the day
+    [x] Can check the news
+    [x] Can check the weather
+    [x] Can check exercises for the day
+        [x] Can pick a track
+        [x] Can see that track's exercises for the day
     [ ] Can select meals for the day
-    [ ] Can exit the app
+        [x] Can view common recipes
+        [ ] Can set meals for the day
+            [ ] Creates or finds meal with that name
+            [ ] If there is not meal, asks for instructions
+    [x] Can exit the app
 [x] Login Menu
     [x] Welcomes user
     [x] Can create new user
@@ -130,6 +136,9 @@ Stretch
     [ ] Keeps track of what chapter you are on in which book
 [ ] Exercise
     Tailor weights, reps, sets to individual users
+[ ] Meal
+    [ ] Access ingredients properly
+    [ ] Add recipes to meal plan from the recipe menu
 [ ] Metrics
     [ ] Food
         [ ] Top 5 popular meals
