@@ -149,7 +149,7 @@ def meal_plan_menu
     line
     puts "1. #{display_meal("Breakfast")}"
     puts "2. #{display_meal("Lunch")}"
-    puts "3. #{display_meal("Lunch")}"
+    puts "3. #{display_meal("Dinner")}"
     line
     double_space
     puts "Which meal would you like to plan?"
@@ -171,12 +171,14 @@ def meal_plan_menu
 end
 
 def enter_meal(input)
-    meal = meal_time(input)
+    when_to_eat = meal_time(input)
     clear_screen
-    puts "What would you like to have for #{meal} today?"
+    puts "What would you like to have for #{when_to_eat} today?"
     double_space
-    meal_entry(meal)
-    "Hmm, I don't recognize that meal. How do you make that?"
+    meal = meal_entry
+    save_meal(when_to_eat, meal)
+    puts "Excellent, we'll have #{meal.name} for #{when_to_eat}!"
+    gets.chomp
 end
 
 def meal_time(input)
@@ -191,9 +193,21 @@ def meal_time(input)
     meal
 end
 
-def meal_entry(meal)
-    input = gets.chomp
-    Recipe.create_or_find_by(name: input)
+def meal_entry
+    meal_name = gets.chomp
+    if Recipe.exists?(name: meal_name)
+        Recipe.find_by(name: meal_name)
+    else
+        clear_screen
+        puts "Hmm, I don't recognize that meal. How do you make that?"
+        double_space
+        instructions = gets.chomp
+        Recipe.create(name: meal_name, instructions: instructions)
+    end
+end
+
+def save_meal(when_to_eat, meal)
+    Meal.create(user_id: CURRENT_SESSION.user.id, recipe_id: meal.id, meal_time: when_to_eat, date: Date.today)
 end
 
 

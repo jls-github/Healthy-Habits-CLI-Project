@@ -96,17 +96,17 @@ MVP
         [x] Seed
     [x] TEST: model relations
     [x] API call to seed database
-[ ] Main Menu
+[x] Main Menu
     [x] Can check the news
     [x] Can check the weather
     [x] Can check exercises for the day
         [x] Can pick a track
         [x] Can see that track's exercises for the day
-    [ ] Can select meals for the day
+    [x] Can select meals for the day
         [x] Can view common recipes
-        [ ] Can set meals for the day
-            [ ] Creates or finds meal with that name
-            [ ] If there is not meal, asks for instructions
+        [x] Can set meals for the day
+            [x] Creates or finds meal with that name
+            [x] If there is not meal, asks for instructions
     [x] Can exit the app
 [x] Login Menu
     [x] Welcomes user
