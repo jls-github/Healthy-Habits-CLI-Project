@@ -143,9 +143,70 @@ def display_meal_menu
 end
 
 def meal_plan_menu
-    display_meal("Breakfast")
-    display_meal("Lunch")
-    display_meal("Dinner")
+    clear_screen
+    line
+    puts "Plan Your Meals"
+    line
+    puts "1. #{display_meal("Breakfast")}"
+    puts "2. #{display_meal("Lunch")}"
+    puts "3. #{display_meal("Lunch")}"
+    line
+    double_space
+    puts "Which meal would you like to plan?"
+    puts "Enter 'exit' to return to the main menu"
+    double_space
+    input = gets.chomp
+    if input.downcase == 'exit'
+        return ""
+    elsif ["1", "2", "3"].include?(input)
+        enter_meal(input)
+    else
+        clear_screen
+        puts "I didn't understand that command"
+        double_space
+        double_space
+        sleep(2)
+        meal_plan_menu
+    end
+end
+
+def enter_meal(input)
+    meal = meal_time(input)
+    clear_screen
+    puts "What would you like to have for #{meal} today?"
+    double_space
+    meal_entry(meal)
+    "Hmm, I don't recognize that meal. How do you make that?"
+end
+
+def meal_time(input)
+    case input.to_i
+    when 1
+        meal = "Breakfast"
+    when 2
+        meal = "Lunch"
+    when 3
+        meal = "Dinner"
+    end
+    meal
+end
+
+def meal_entry(meal)
+    input = gets.chomp
+    Recipe.create_or_find_by(name: input)
+end
+
+
+
+
+def display_meal(meal_time)
+    meal = Meal.find_by(date: Date.today, meal_time: meal_time, user_id: CURRENT_SESSION.user.id)
+    if meal == nil
+        description = "What shall we eat today?" 
+    else
+        description = meal.recipe.name
+    end
+    "#{meal_time} - #{description}"
 end
 
 def recommended_recipes_menu(recipe_number)
@@ -160,7 +221,8 @@ def recommended_recipes_menu(recipe_number)
     end
     line
     double_space
-    puts "Want to see more? (y/n)"
+    puts "Enter the number of the recipe you want to look at."
+    puts "Do you want to see more? (y/n)"
     double_space
     input = gets.chomp
     if input.downcase == "y" || input.downcase == "yes"
