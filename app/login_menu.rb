@@ -49,7 +49,7 @@ def create_user
     password = create_password
     double_space
     user = User.create(username: username, password: password, role: 0)
-    SESSION = Session.new(user)
+    Session.new(user)
 end
 
 def create_username
@@ -121,6 +121,7 @@ def enter_username
 end
 
 def check_password(user)
+    clear_screen
     puts "Enter your password"
     double_space
     input = gets.chomp

@@ -22,7 +22,7 @@ User Stories
 
 
 MVP
-[ ] User Log In
+[x] User
     [x] User model
         columns: username, password, role(admin or user)
         [x] Create Migration
@@ -36,13 +36,12 @@ MVP
         [x] Model
         [x] Seed
     [x] TEST: model relationships
-    [ ] User rememberance
-    [ ] CLI Logic
+    [x] User rememberance
 [ ] News Display
     [x] Can display a news article
     [ ] Can iterate through news articles
 [x] Weather Display
-[ ] Meals(Breakfast, Lunch, Dinner)
+[x] Meals(Breakfast, Lunch, Dinner)
     [x] Recipe model
         columns: name, meal_time, prep time, recipe link 
         [x] Create Migration
@@ -69,9 +68,8 @@ MVP
         [x] Seed
     [x] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
     [x] TEST: model relationships
-    [ ] Ability to see list of popular meals
     [x] API call to seed database
-[ ] Exercise
+[x] Exercise
     [x] Exercises table
         columns: name, instruction
         [x] Create Migration
@@ -97,12 +95,14 @@ MVP
         [x] Model
         [x] Seed
     [x] TEST: model relations
-    [ ] API call to seed database
+    [x] API call to seed database
 [ ] Main Menu
-    [ ] Shows only services opted into
-    [ ] Plan Your Meals
-    [ ] Plan Your Exercise
-[ ] Login Menu
+    [ ] Can check the news
+    [ ] Can check the weather
+    [ ] Can check exercises for the day
+    [ ] Can select meals for the day
+    [ ] Can exit the app
+[x] Login Menu
     [x] Welcomes user
     [x] Can create new user
         [x] Cannot create a duplicate username

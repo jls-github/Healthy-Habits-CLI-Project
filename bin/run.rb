@@ -15,9 +15,26 @@ puts ""
 input = gets.chomp
 if new?(input)
     app_description
-    create_user
+    session = create_user
 else 
-    log_in
+    session = log_in
 end
 
 #Main Menu
+until input == "5"
+    display_menu
+    input = gets.chomp
+    if input == "1"
+        check_news
+    elsif input == "2"
+        check_weather
+    elsif input == "3"
+        check_meals
+    elsif input == "4"
+        check_fitness
+    else
+        input_error
+    end    
+end
+
+goodbye
