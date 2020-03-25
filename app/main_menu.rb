@@ -1,6 +1,6 @@
 def display_menu
     clear_screen
-    main_menu_graphic
+    puts main_menu_graphic
     line
     puts "What would you like to see?"
     puts "1. News"
@@ -24,6 +24,7 @@ def check_news
     until input.downcase != "y"
         News.display_articles(i)
         i += 1
+        puts ""
         puts "Want to see another?(y/n)"
         input = gets.chomp
         if i == 10
@@ -34,7 +35,11 @@ def check_news
 end
 
 def check_weather
-
+    Weather.display_weather("Seattle")
+    puts ""
+    puts "Press 'Enter' to go back to the main menu"
+    puts ""
+    gets
 end
 
 def check_meals
