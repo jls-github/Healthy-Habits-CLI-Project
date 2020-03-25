@@ -48,54 +48,54 @@ MVP
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Meals join table
         columns: user_id, recipe_id, date
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Ingredients Table
         columns: name
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Recipe Component Table (join between ingredients and recipes)
         columns:  ingredient_id, recipe_id, ingredient_amount
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Change meal_time columns for meals. Change to breakfast, lunch, dinner columns with booleans
     [x] TEST: model relationships
     [ ] Ability to see list of popular meals
-    [ ] API call to seed database
+    [x] API call to seed database
 [ ] Exercise
     [x] Exercises table
         columns: name, instruction
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Exercise_track_day table
         columns: day, exercise_id, exercise_track_id, reps, sets
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] Exercises track table (many to many - users have one track through committment table, many exercises through that track)
         columns: name, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seeed
+        [x] Seeed
     [x] Exercise Committment Table
         columns: user_id, exercise_track_id
         [x] Create Migration
         [x] Migrate
         [x] Model
-        [ ] Seed
+        [x] Seed
     [x] TEST: model relations
     [ ] API call to seed database
 [ ] Main Menu
