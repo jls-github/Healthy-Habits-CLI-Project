@@ -149,7 +149,6 @@ def check_password(user)
     double_space
     puts "Excellent, let's get into the app!"
     double_space
-    double_space
     sleep(1)
 end
 

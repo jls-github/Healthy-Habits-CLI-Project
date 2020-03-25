@@ -12,6 +12,8 @@ def display_menu
     double_space
 end
 
+# NEWS
+
 def check_news
     clear_screen
     puts news_graphic
@@ -44,6 +46,8 @@ def scroll_through_news(input)
     end
 end
 
+# WEATHER
+
 def check_weather
     clear_screen
     puts weather_graphic
@@ -54,9 +58,7 @@ def check_weather
     gets
 end
 
-def check_meals
-
-end
+# FITNESS
 
 def check_fitness
     if new_to_fitness?
@@ -87,7 +89,6 @@ end
 
 def choose_exercise_track
     clear_screen
-    exercise_graphic
     display_new_fitness_menu
     double_space
     puts "Choose a track"
@@ -98,6 +99,7 @@ end
 
 def display_new_fitness_menu
     i = 1
+    puts exercise_graphic
     line
     puts "Here are our available exercise tracks:"
     ExerciseTrack.all.each do |track|
@@ -105,6 +107,80 @@ def display_new_fitness_menu
         i += 1
     end
     line
+end
+
+# MEALS
+
+def check_meals
+    display_meal_menu
+    input = gets.chomp
+    if input == "1"
+        meal_plan_menu
+    elsif input == "2"
+        recommended_recipes_menu(0)
+    elsif input == "exit"
+        return ""
+    else
+        clear_screen
+        puts "I don't recognize that input, please try again"
+        double_space
+        double_space
+        sleep(1)
+        check_meals
+    end
+end
+
+def display_meal_menu
+    clear_screen
+    puts food_graphic
+    line
+    puts "1. Meal Planning"
+    puts "2. Recommended Recipes"
+    line
+    double_space
+    puts "What would you liek to do? Type 'exit' to go back to the main menu."
+    double_space
+end
+
+def meal_plan_menu
+    display_meal("Breakfast")
+    display_meal("Lunch")
+    display_meal("Dinner")
+end
+
+def recommended_recipes_menu(recipe_number)
+    i = 1
+    clear_screen
+    line
+    puts "Here is a list of meals"
+    line
+    Recipe.all[recipe_number..(recipe_number+4)].each do |recipe| # this would be better optimized by making just one call to the database, maybe?
+        puts "#{i}. #{recipe.name}"
+        i += 1
+    end
+    line
+    double_space
+    puts "Want to see more? (y/n)"
+    double_space
+    input = gets.chomp
+    if input.downcase == "y" || input.downcase == "yes"
+        recommended_recipes_menu(recipe_number + 5)
+    elsif ["1", "2", "3", "4", "5"].include?(input)
+        display_recipe(Recipe.all[(recipe_number + input.to_i - 1)])
+    end
+end
+
+def display_recipe(recipe)
+    clear_screen
+    line
+    puts recipe.name
+    line
+    puts recipe.instructions
+    line
+    double_space
+    puts "Press 'Enter' to go back to the main menu"
+    double_space
+    gets.chomp #stretch goal - can we add this recipe to one of our meals for the day?
 end
 
 def goodbye
