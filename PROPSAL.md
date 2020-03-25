@@ -102,6 +102,12 @@ MVP
     [ ] Shows only services opted into
     [ ] Plan Your Meals
     [ ] Plan Your Exercise
+[ ] Login Menu
+    [x] Welcomes user
+    [x] Can create new user
+        [x] Cannot create a duplicate username
+    [x] Can log in
+    [x] Keeps track of who is logged in
     
 
 Stretch
