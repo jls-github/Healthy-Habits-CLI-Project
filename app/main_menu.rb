@@ -47,7 +47,42 @@ def check_meals
 end
 
 def check_fitness
+    if new_to_fitness?
+        track = choose_exercise_track
+        CURRENT_SESSION.user.sign_exercise_commitment(track)
+    end
+    display_todays_exercise
+end
 
+def display_todays_exercise
+    clear_screen
+
+end
+
+def new_to_fitness?
+    CURRENT_SESSION.user.exercise_commitment == nil
+end
+
+def choose_exercise_track
+    clear_screen
+    exercise_graphic
+    display_new_fitness_menu
+    double_space
+    puts "Choose a track"
+    double_space
+    input = gets.chomp
+    ExerciseTrack.all[input.to_i - 1]
+end
+
+def display_new_fitness_menu
+    i = 1
+    line
+    puts "Here are our available exercise tracks:"
+    ExerciseTrack.all.each do |track|
+        puts "#{i}. #{track.name} - #{track.description}"
+        i += 1
+    end
+    line
 end
 
 def goodbye

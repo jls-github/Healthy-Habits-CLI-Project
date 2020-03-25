@@ -20,6 +20,8 @@ else
     session = log_in
 end
 
+CURRENT_SESSION = session
+
 #Main Menu
 until input == "5"
     display_menu
