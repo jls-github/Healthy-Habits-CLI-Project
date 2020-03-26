@@ -10,4 +10,5 @@ gem 'rake'
 gem 'json'
 gem 'faker'
 gem 'rest-client'
+gem 'bcrypt'
 

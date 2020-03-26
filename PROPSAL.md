@@ -37,9 +37,9 @@ MVP
         [x] Seed
     [x] TEST: model relationships
     [x] User rememberance
-[ ] News Display
+[x] News Display
     [x] Can display a news article
-    [ ] Can iterate through news articles
+    [x] Can iterate through news articles
 [x] Weather Display
 [x] Meals(Breakfast, Lunch, Dinner)
     [x] Recipe model
