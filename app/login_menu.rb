@@ -1,20 +1,3 @@
-require_relative '../config/environment.rb'
-
-def clear_screen
-    15.times do
-        puts ""
-    end
-end
-
-def line
-    puts "----------------------------------------------------------"
-end
-
-def double_space
-    puts ""
-    puts ""
-end
-
 def welcome
     puts "Welcome to Healthy Habits! Are you new here? (y/n)"
 end
