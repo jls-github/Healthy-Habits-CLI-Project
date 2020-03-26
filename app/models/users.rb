@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
         ExerciseCommitment.create(user: self, exercise_track: exercise_track)
     end
 
+    def todays_exercise
+        day = Date.today.strftime("%A")
+        self.exercise_track.exercise_track_days.find {|track_day| track_day.day == day}.exercise
+    end
+
 end

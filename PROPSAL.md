@@ -118,7 +118,10 @@ MVP
 
 Stretch
 [x] User password hashing
-[ ] Refactor everything - this looks terrible
+[x] Refactor everything - this looks terrible - separate separate concerns into separate files
+[ ] Refactor everything further
+[x] Give user access to update his meal plan, delete his meal plan
+[ ] Give user access to update his fitness track
 [ ] Admin access
     [ ] Can access list of users
 [x] News displays article by article
