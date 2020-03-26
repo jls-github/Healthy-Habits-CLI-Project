@@ -117,10 +117,10 @@ MVP
     
 
 Stretch
-[ ] User password hashing
+[x] User password hashing
 [ ] Admin access
     [ ] Can access list of users
-[ ] News displays article by article
+[x] News displays article by article
 [ ] Displays everything as a checkbox to mark progress throughout the day
 [ ] Read
     [ ] Books table

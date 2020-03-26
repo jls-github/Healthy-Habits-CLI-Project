@@ -174,8 +174,17 @@ def enter_meal(input)
     when_to_eat = meal_time(input)
     clear_screen
     puts "What would you like to have for #{when_to_eat} today?"
+    if Meal.exists?(user_id: CURRENT_SESSION.user.id, meal_time: when_to_eat, date: Date.today)
+        puts "Enter 'delete' to delete this meal plan and return to the main menu"
+    end
     double_space
     meal = meal_entry
+    if meal == "delete"
+        if Meal.exists?(user_id: CURRENT_SESSION.user.id, meal_time: when_to_eat, date: Date.today)
+            Meal.find_by(user_id: CURRENT_SESSION.user.id, meal_time: when_to_eat, date: Date.today).destroy
+            return ""
+        end
+    end
     save_meal(when_to_eat, meal)
     puts "Excellent, we'll have #{meal.name} for #{when_to_eat}!"
     gets.chomp
@@ -195,6 +204,9 @@ end
 
 def meal_entry
     meal_name = gets.chomp
+    if meal_name.downcase == "delete"
+        return "delete"
+    end
     if Recipe.exists?(name: meal_name)
         Recipe.find_by(name: meal_name)
     else
@@ -207,11 +219,12 @@ def meal_entry
 end
 
 def save_meal(when_to_eat, meal)
-    Meal.create(user_id: CURRENT_SESSION.user.id, recipe_id: meal.id, meal_time: when_to_eat, date: Date.today)
+    if Meal.exists?(user_id: CURRENT_SESSION.user.id, meal_time: when_to_eat, date: Date.today)
+        Meal.find_by(user_id: CURRENT_SESSION.user.id, meal_time: when_to_eat, date: Date.today).update(recipe_id: meal.id)
+    else
+        Meal.create(user_id: CURRENT_SESSION.user.id, recipe_id: meal.id, meal_time: when_to_eat, date: Date.today)
+    end
 end
-
-
-
 
 def display_meal(meal_time)
     meal = Meal.find_by(date: Date.today, meal_time: meal_time, user_id: CURRENT_SESSION.user.id)
