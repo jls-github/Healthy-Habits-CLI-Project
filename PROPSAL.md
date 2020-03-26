@@ -118,6 +118,7 @@ MVP
 
 Stretch
 [x] User password hashing
+[ ] Refactor everything - this looks terrible
 [ ] Admin access
     [ ] Can access list of users
 [x] News displays article by article
