@@ -1,6 +1,8 @@
 
 User.destroy_all
 
+User.create(username: "Boyde", password: "Password", role: 1)
+
 25.times do
     User.create(username: Faker::Name.first_name, password: Faker::Creature::Animal.name, role: 0)
 end
@@ -64,7 +66,7 @@ Exercise.create(name: "Mountain Climbers", instructions: "Assume a plank positio
 
 ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Run").id, day: "Monday")
 ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Mountain Climbers").id, day: "Tuesday")
-ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Run"), day: "Wedesday")
+ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Run"), day: "Wednesday")
 ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Mountain Climbers").id, day: "Thursday")
 ExerciseTrackDay.create(exercise_track_id: ExerciseTrack.find_by(name: "Cardio").id, exercise_id: Exercise.find_by(name: "Run"), day: "Friday")
 

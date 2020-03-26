@@ -139,7 +139,7 @@ def check_password(user)
     puts "Enter your password"
     double_space
     input = gets.chomp
-    unless user.password == input
+    unless user.authenticate(input)
         puts "Incorrect password, please try again"
         password = check_password(user)
         return password
