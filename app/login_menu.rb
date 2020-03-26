@@ -9,8 +9,8 @@ def login_menu
     input = gets.chomp
     if new?(input)
         app_description
-        session = create_user
+        create_user
     else 
-        session = log_in
+        log_in
     end
 end

@@ -27,7 +27,7 @@ def display_meal_menu
     puts "2. Recommended Recipes"
     line
     double_space
-    puts "What would you liek to do? Type 'exit' to go back to the main menu."
+    puts "What would you like to do? Type 'exit' to go back to the main menu."
     double_space
 end
 

@@ -1,5 +1,5 @@
 def clear_screen
-    15.times do
+    30.times do
         puts ""
     end
 end

@@ -13,11 +13,12 @@ end
 def scroll_through_news(input)
     i = 0
     until input.downcase != "more"
+        clear_screen
         News.display_articles(i)
         i += 1
         puts ""
         puts "Enter 'more' to see another article."
-        puts "Type anything else to go back to the main menu."
+        puts "Press 'Enter' to go back to the main menu."
         double_space
         input = gets.chomp.downcase
         if i == 10

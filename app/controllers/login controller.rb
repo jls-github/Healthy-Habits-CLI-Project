@@ -9,6 +9,8 @@ def new?(input)
         return true
     else
         puts logo
+        clear_screen
+        puts logo
         double_space
         puts "Please enter 'y' or 'n'"
         double_space
@@ -28,6 +30,9 @@ def app_description
     puts "and keep track of what's going on around the world."
     line
     double_space
+    puts "Press 'Enter' to continue"
+    double_space
+    gets.chomp
 end
 
 def create_user
@@ -43,21 +48,28 @@ def create_user
 end
 
 def create_username
+    clear_screen
+    puts logo
+    double_space
     puts "What is a good username for you?"
     double_space
     username = gets.chomp
-    clear_screen
     if User.all.map{|user| user.username}.include?(username)
         clear_screen
         puts logo
         double_space
         puts "Sorry, that username is already taken"
+        sleep(1)
         username = create_username
         return username
     end
+    clear_screen
+    puts logo
     double_space
     puts "Great! Your username is #{username}."
+    double_space
     username
+    sleep(1)
 end
 
 def create_password
@@ -67,8 +79,8 @@ def create_password
     puts "Now let's choose a password"
     double_space
     password = gets.chomp
-    clear_screen
     if password == "password"
+        clear_screen
         double_space
         puts "Really?"
         clear_screen
@@ -84,8 +96,10 @@ def create_password
         password = create_password
         return password
     end
-    double_space
+    clear_screen
     puts "Excellent choice!"
+    double_space
+    sleep(1)
     password
 end
 
