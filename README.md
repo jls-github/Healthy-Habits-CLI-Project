@@ -11,4 +11,8 @@ To install:
 3. Type ```bundle install``` to install the correct Ruby gems
 4. type ```ruby bin/run.rb``` in your console
 
+## See it in action
+
+Head over to https://www.youtube.com/watch?v=VVKpZ8CdRH8 to see the app in action!
+
 Thank you!
