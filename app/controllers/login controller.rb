@@ -112,13 +112,11 @@ def enter_username
     input = gets.chomp
     user = User.find_by(username: input)
     if user == nil
-        double_space
+        clear_screen
         puts "                            #{input}?"
         double_space
         double_space
         double_space
-        sleep(2)
-        clear_screen
         puts "It looks like we don't have that user here"
         double_space
         double_space
