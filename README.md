@@ -2,6 +2,8 @@
 
 This application allows you to maintain healthy habits. Whether it's keeping up with the news, planning out your daily meals, or making sure to exercise, this app will help you stay healthy!
 
+NOTE: This application does not have proper API keys in use
+
 ## Installation Instructions
 
 To install:
